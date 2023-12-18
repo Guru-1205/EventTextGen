@@ -115,11 +115,5 @@ def upload():
     # return render_template('index1.html', document_url='/download', doc_stream=doc_stream)
 
 
-@app.route('/download')
-def download():
-    global doc_stream
-    # Download the document
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run()
