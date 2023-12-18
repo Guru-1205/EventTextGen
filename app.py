@@ -49,7 +49,8 @@ def upload():
 
             draw = ImageDraw.Draw(img)
             font_size = 20
-            font = ImageFont.truetype("arial.ttf", font_size)
+            font_path = os.path.join(app.root_path, 'fonts', 'ARIAL.TTF')
+            font = ImageFont.truetype(font_path, font_size)
 
             event_name = request.form.get('event_name', 'Your Event Name')
 
