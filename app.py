@@ -6,13 +6,12 @@ from io import BytesIO
 import google.generativeai as genai
 from docx import Document
 from docx.shared import Inches
+from app_creator import create
 
-app = Flask(__name__)
+app = create()
 
-UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 doc_stream = None
 # openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -123,5 +122,4 @@ def download():
 
 
 if __name__ == '__main__':
-    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     app.run(debug=True)
