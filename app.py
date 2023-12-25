@@ -47,6 +47,7 @@ def upload():
             # Process the image
             img = Image.open(file)
 
+            img = img.resize((1027, 515))
             draw = ImageDraw.Draw(img)
             font_size = 20
             font_path = os.path.join(app.root_path, 'fonts', 'ARIAL.TTF')
@@ -72,15 +73,8 @@ def upload():
 
             # Draw the event name text
             draw.text(text_position, event_name, font=font, fill=(0, 0, 0))
-
-            # text_position = (10, 10)
-            # text_color = (0, 0, 0)
-
-            # draw.rectangle([0, 0, img.width, 50], fill=(255, 255, 255))
-            # draw.text(text_position, event_name, font=font, fill=text_color)
-
-            # Save the edited image to a BytesIO object
             edited_image_stream = BytesIO()
+            # img.resize((cm_to_pixels(4.97, 300), cm_to_pixels(7.78, 300)))
             img.save(edited_image_stream, format='PNG')
             edited_image_stream.seek(0)
 
@@ -114,5 +108,14 @@ def upload():
     # return render_template('index1.html', document_url='/download', doc_stream=doc_stream)
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+def cm_to_pixels(size_in_cm, dpi=300):
+    # Convert centimeters to inches
+    size_in_inches = size_in_cm / 2.54
+
+    # Calculate pixels
+    pixels = int(size_in_inches * dpi)
+    return pixels
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
