@@ -56,7 +56,7 @@ def upload():
             event_name = request.form.get('event_name', 'Your Event Name')
 
             # Calculate the rectangle coordinates to center it at the top with a small gap
-            rect_height = 35
+            rect_height = 34
             gap = 30  # Adjust the gap as needed
             rect_width = draw.textsize(event_name, font=font)[
                 0] + 2 * gap  # Add some padding
