@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, send_file
 from PIL import Image, ImageDraw, ImageFont
 import os
 from io import BytesIO
-import google.generativeai as genai
+# import google.generativeai as genai
 from docx import Document
 from docx.shared import Inches
 
@@ -13,15 +13,15 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 doc_stream = None
 # openai.api_key = os.getenv("OPENAI_API_KEY")
-genai.configure(api_key="AIzaSyAJMRq6IlbLTA-bbnxTWjpYB59cUl_H7o0")
+# genai.configure(api_key="AIzaSyAJMRq6IlbLTA-bbnxTWjpYB59cUl_H7o0")
 
 
-def generate_text(prompt):
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
-        max_output_tokens=(35*3),
-    ))
-    return response.text
+# def generate_text(prompt):
+#     model = genai.GenerativeModel('gemini-pro')
+#     response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(
+#         max_output_tokens=(35*3),
+#     ))
+#     return response.text
 
 
 def allowed_file(filename):
@@ -83,16 +83,17 @@ def upload():
         # Generate text using GPT-3
     context = request.form.get('context', 'Your event context here.')
 
-    rephrased_context = generate_text(context)
+    # rephrased_context = generate_text(context)
 
     # Create a Word document with the image and rephrased context
     document = Document()
+    event_name = request.form.get('event_name', 'Your Event Name')
     document.add_heading(event_name, level=1)
     # document.add_picture(edited_image_stream, width=Inches(4.0))
     for edited_image_stream in (edited_images):
         document.add_picture(edited_image_stream, width=Inches(4.0))
-    document.add_paragraph('Rephrased Context:')
-    document.add_paragraph(rephrased_context)
+    # document.add_paragraph('Rephrased Context:')
+    # document.add_paragraph(rephrased_context)
 
     # Save the document to a BytesIO object
     doc_stream = BytesIO()
