@@ -15,8 +15,6 @@ doc_stream = None
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 genai.configure(api_key="AIzaSyAJMRq6IlbLTA-bbnxTWjpYB59cUl_H7o0")
 
-# Function to generate text using GPT-3
-
 
 def generate_text(prompt):
     model = genai.GenerativeModel('gemini-pro')
