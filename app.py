@@ -121,7 +121,7 @@ def upload():
 
     return send_file(doc_stream,
                      mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                     as_attachment=True, attachment_filename='output_document.docx')
+                     as_attachment=True, download_name='output_document.docx')
 
 
 if __name__ == '__main__':
