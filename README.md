@@ -1,6 +1,3 @@
-Sure! Here’s an introductory content piece for your Flask-based image editing and event description rephrasing project, styled similarly to the example you provided:
-
----
 
 Hey everyone!
 
@@ -21,9 +18,6 @@ If you encounter any bugs or need help, feel free to reach out. I'm here to assi
 
 ---
 
-This introduction aims to be engaging and friendly while providing a clear overview of what your project does and how users can benefit from it.
-
----
 
 # Image Editor and Event Description Rephrasing
 
@@ -81,6 +75,7 @@ flask
 pillow
 requests
 python-docx
+google-generativeai
 ```
 
 ## Usage
