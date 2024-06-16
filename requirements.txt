@@ -1,25 +1,6 @@
 Flask==2.3.1
-google-ai-generativelanguage==0.4.0
-google-api-core==2.15.0
-google-auth==2.23.0
-google-auth-oauthlib==1.0.0
 google-generativeai==0.3.1
-google-pasta==0.2.0
-googleapis-common-protos==1.62.0
-grpcio==1.60.0
-grpcio-status==1.60.0
 gunicorn==21.2.0
-Jinja2==3.1.2
-joblib==1.2.0
-jupyter_client==8.0.3
-jupyter_core==5.2.0
-keras==2.13.1
-kiwisolver==1.4.4
-lazy_loader==0.3
-libclang==16.0.6
-librosa==0.10.1
-llvmlite==0.41.0
-lxml==4.9.3
 Pillow==9.4.0
 python-docx==1.1.0
 
